@@ -1,7 +1,7 @@
 
 
 import type { Metadata } from "next";
-import Counter from '../components/Counter';
+import Counter from "./components/Counter";
 
 export const metadata: Metadata = {
   title: 'Counter Page',

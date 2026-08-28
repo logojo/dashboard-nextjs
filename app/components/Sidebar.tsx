@@ -7,19 +7,19 @@ const menuItems = [
         title: "Dashboard",
         subtitle: "Data Overview",
         icon: <IoBrowsersOutline size={30}/>,
-        path: "/dashboard/main"
+        path: "/dashboard"
     },
     {
         title: "Counter",
         subtitle: "Estado local",
         icon: <IoCalculator size={30}/>,
-        path: "/dashboard/counter"
+        path: "/counter"
     },
     {
         title: "Pokemons",
         subtitle: "Lista de pokemons estaticos",
         icon: <IoFootball size={30}/>,
-        path: "/dashboard/pokemons"
+        path: "/pokemons"
     }
 ]
 export const Sidebar = () => {
