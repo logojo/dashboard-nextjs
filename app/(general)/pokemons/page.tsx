@@ -1,29 +1,15 @@
-import { PokemonsResponse, SimplePokemon } from "./interfaces";
+import { cacheLife } from "next/cache";
 import { PokemonGrid } from "./components/PokemonGrid";
+import { getPokemons } from "./actions/get-pokemons.action";
 
-
-
-const getPokemon = async ( limit: number = 20, offset: number = 0 ) : Promise<SimplePokemon[]> => {
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
-
-  const data : PokemonsResponse = await fetch(url, {
-    cache: 'force-cache'
-  })
-  .then((res) => res.json());
-
-  const pokemons: SimplePokemon[] = data.results.map((pokemon) => ({
-    id: pokemon.url.split('/').at(-2)!,
-    name: pokemon.name,
-  }));
-
-  //!manejo de errores
-  //throw new Error('Forzando error');
-
-  return  pokemons;
-}
 
 const PokemonPage = async () => {
- const pokemons = await getPokemon(151, 0);
+'use cache'
+
+ const pokemons = await getPokemons(151, 0);
+
+  cacheLife('hours'); //permite indicar por cuantro tiempo esta peticion estara fresca
+  //cacheTag() // permite invalidar ese caché manualmente cuando sabes que los datos cambiaron
 
   return (
     <div className="flex flex-col justify-center items-center">
