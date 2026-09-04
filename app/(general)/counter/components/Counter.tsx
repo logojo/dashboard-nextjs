@@ -16,9 +16,9 @@ const Counter = () => {
               > -1 </button>
         <button className="cursor-pointerflex items-center justify-center p-2 rounded-xl bg-gray-800 hover:bg-gray-600 text-white transition-all w-25 active:scale-95" 
                 onClick={ reset }
-              > reset </button>
+              > Reset </button>
         <button className="cursor-pointerflex items-center justify-center p-2 rounded-xl bg-gray-800 hover:bg-gray-600 text-white transition-all w-25 active:scale-95" 
-                onClick={ inc }
+                onClick={() => inc()}
               > +1 </button>
       </div>
     </div>

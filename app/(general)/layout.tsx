@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Sidebar } from "../components";
 
 
@@ -12,7 +13,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="p-6 w-full text-slate-900">
           { children }
         </div>
-        
       </div>
 
     </div>
